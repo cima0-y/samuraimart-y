@@ -1,8 +1,8 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm samuraimart-header-container">
-    <%= link_to root_path do %>
-      <%= image_tag "/images/logo.jpg" %>
-    <% end %>  
+  <%= link_to root_path do %>  
+    <%= image_tag "/images/logo.jpg" %>
+  <% end %>  
     <form class="form-inline">
       <div class="form-group">
         <input class="form-control samuraimart-header-search-input">
@@ -30,6 +30,11 @@
             <i class="far fa-heart"></i>
           <% end %>
         </li>
+        <li class="nav-item mr-5">
+          <%= link_to cart_users_path, class: "nav-link" do %>
+            <i class="fas fa-shopping-cart"></i>
+          <% end %>
+        </li>    
       <% else %>    
         <li class="nav-item mr-5">  
           <%= link_to new_user_registration_path, class: "nav-link" do %>

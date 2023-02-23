@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 
 # 環境変数を使用できる
-  gem 'dotenv-rails'
+gem 'dotenv-rails'
 
 # bootstrapを使用できる
 gem 'bootstrap', '~> 4.6.0'
@@ -52,6 +52,9 @@ gem 'kaminari'
 
 # それらしい値を自動生成できる
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :tag => 'v2.19.0'
+
+# ショッピングカートを実装できる
+gem 'acts_as_shopping_cart'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

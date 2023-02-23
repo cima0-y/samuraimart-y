@@ -13,7 +13,7 @@
           <% end %>
           <div class="container mt-3">
             <h5 class="w-100 samuraimart-favorite-item-text"><%= favorite.name %></h5>
-            <h6 class="w-100 samuraimart-favorite-item-text">¥<%= favorite.price %></h6>
+            <h6 class="w-100 samuraimart-favorite-item-text">￥<%= favorite.price %></h6>
           </div>
         </div>
       </div>
@@ -23,12 +23,17 @@
         <% end %>
       </div>
       <div class="col-md-2 d-flex align-items-center justify-content-end">
-        <button type="submit" class="btn samuraimart-favorite-add-cart text-white w-100">カートに入れる</button>
+        <%= form_with url: cart_create_users_path, local: true do |f| %>
+          <%= f.hidden_field :product_id, value: favorite.id %>
+          <%= f.hidden_field :price, value: favorite.price %>
+          <%= f.hidden_field :quantity, value: 1 %>
+          <%= f.submit "カートに入れる", class: "btn samuraimart-favorite-add-cart text-white w-100" %>
+        <% end %>  
       </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
-    <hr>
+  <hr>
 
   </div>
 </div>  
